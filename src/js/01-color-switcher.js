@@ -5,19 +5,19 @@ const refs = {
     stopButton: document.querySelector('button[data-stop]')
 };
 
-// fn for getting color
+// fn declaration for getting random color
 
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-// fn for update bg color
+// fn declaration for update bg color
 
 function updateBodyBgColor(color) {
     document.body.style.backgroundColor = color;
 }
 
-// class with properties for start/stop changing body bg color + disabling start btn while started and stop btn when stopped
+// class declaration with properties for start/stop changing body bg color + disabling start btn while started and stop btn when stopped
 
 class ColorChanger {
     constructor (updateBodyBgColor) {
@@ -51,12 +51,7 @@ class ColorChanger {
 
 const bgColorChanger = new ColorChanger();
 
-// add eventListeners for buttons
+// add eventListeners for start/stop buttons
 
 refs.startButton.addEventListener('click', () => bgColorChanger.startChangeBgColor());
 refs.stopButton.addEventListener('click', () => bgColorChanger.stopChangeBgColor());
-
-
-
-
-
