@@ -31,8 +31,8 @@ function onSubmitForm(e) {
   e.preventDefault();
 
   let delay = Number(e.currentTarget.delay.value);
-  const delayStep = Number(e.currentTarget.step.value);
-  const amount = Number(e.currentTarget.amount.value);
+  let delayStep = Number(e.currentTarget.step.value);
+  let amount = Number(e.currentTarget.amount.value);
 
   for (let position = 1; position <= amount; position += 1) {
     createPromise(position, delay)
