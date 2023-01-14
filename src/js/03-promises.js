@@ -38,12 +38,12 @@ function onSubmitForm(e) {
     createPromise(position, delay)
       .then(({ position, delay }) => {
         setTimeout(() => {
-          Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delayStep}ms`, { useIcon: false });
+          Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delayStep + delay}ms`, { useIcon: false });
         }, delay);
       })
       .catch(({ position, delay }) => {
         setTimeout(() => {
-          Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delayStep}ms`, { useIcon: false });
+          Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delayStep + delay}ms`, { useIcon: false });
         }, delay);
       });
     delay += delayStep;
